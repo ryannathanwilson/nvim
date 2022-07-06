@@ -8,7 +8,7 @@ local map = function(mode, key, result)
 end
 
 -- Leader
-vim.g.mapleader = " "
+vim.g.mapleader = ","
 
 -- Indenting
 map('v', '<', '<gv') 
@@ -18,7 +18,7 @@ map('v', '>', '>gv')
 map('i', 'jk', '<Esc>')
 
 -- Next window
-map('n', '<leader>w', '<cmd>wincmd w<CR>')
+map('n', '<leader>,', '<cmd>wincmd w<CR>')
 map('n', '<c-w>', '<cmd>wincmd w<CR>')
 
 -- Previous file toggle
