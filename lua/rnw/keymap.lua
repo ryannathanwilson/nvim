@@ -1,14 +1,12 @@
-local map = function(mode, key, result)
-  vim.api.nvim_set_keymap(
-    mode,
-    key,
-    result,
-    {noremap = true, silent = true}
-  )
-end
+local map = require("rnw.utils").map
 
 -- Leader
 vim.g.mapleader = ","
+
+-- Search
+map('n', '<c-/>', "<cmd>Telescope current_buffer_fuzzy_find<CR>")
+map('n', '<c-f>', '<cmd>lua require("rnw.telescope").files()<CR>')
+map('n', '<leader>g', '<cmd>lua require("rnw.telescope").words()<CR>')
 
 -- Indenting
 map('v', '<', '<gv') 

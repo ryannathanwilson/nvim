@@ -6,6 +6,9 @@ return require("packer").startup(function()
   -- Colorscheme
   use("gruvbox-community/gruvbox")
 
+  -- Icons
+  use("kyazdani42/nvim-web-devicons")
+
   -- Language
   -- def needs configuring
   use("neovim/nvim-lspconfig")
