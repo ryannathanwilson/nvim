@@ -17,6 +17,9 @@ vim.opt.undofile = true
 vim.opt.splitbelow = true
 vim.opt.splitright = true
 
+-- use y and p with the system clipboard
+vim.opt.clipboard = "unnamedplus"
+
 vim.opt.laststatus = 3
 vim.cmd([[
 highlight WinSeparator guibg=None

@@ -17,9 +17,13 @@ map('v', '>', '>gv')
 -- Esc
 map('i', 'jk', '<Esc>')
 
--- Next window
+-- Window management
 map('n', '<leader>,', '<cmd>wincmd w<CR>')
-map('n', '<c-w>', '<cmd>wincmd w<CR>')
+map('n', '<C-W>', '<cmd>wincmd w<CR>')
+map('n', '<C-J>', '<C-W><C-J>')
+map('n', '<C-K>', '<C-W><C-K>')
+map('n', '<C-L>', '<C-W><C-L>')
+map('n', '<C-H>', '<C-W><C-H>')
 
 -- Previous file toggle
 map('n', '<leader>l', '<c-^><CR>')
