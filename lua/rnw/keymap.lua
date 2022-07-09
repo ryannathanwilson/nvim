@@ -26,8 +26,12 @@ map('n', '<C-H>', '<C-W><C-H>')
 -- Previous file toggle
 map('n', '<leader>l', '<c-^><CR>')
 
--- Next in buffer
+-- Next buffer
 map('n', '<leader>n', '<cmd>bn<CR>')
 
 -- Delete current buffer
 map('n', '<leader>bd', '<cmd>bd<CR>')
+
+-- Comment toggle
+map('n', '++', '<cmd>CommentToggle<CR>')
+map('v', '++', ':CommentToggle<CR>')
