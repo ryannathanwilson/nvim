@@ -11,7 +11,7 @@ o.incsearch = true
 o.nu = true
 o.relativenumber = true
 o.scrolloff=8
-o.signcolumn = 'number'
+o.signcolumn = 'yes'
 o.shiftwidth=2
 o.smartindent = true
 o.softtabstop=2
@@ -24,10 +24,11 @@ o.mouse = 'a'
 -- use y and p with the system clipboard
 o.clipboard = "unnamedplus"
 
+cmd([[
+let g:gruvbox_sign_column = 'bg0'
+highlight WinSeparator guibg=NONE
+]])
 cmd("colorscheme gruvbox")
 
 o.laststatus = 3
-cmd([[
-highlight WinSeparator guibg=None
-]])
 
