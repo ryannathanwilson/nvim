@@ -12,13 +12,15 @@ require("packer").startup(function()
 
   -- Language
   use("neovim/nvim-lspconfig")
-  use("nvim-lua/completion-nvim")
+  use("hrsh7th/nvim-cmp")
+  use("hrsh7th/vim-vsnip")
+  use("hrsh7th/cmp-nvim-lsp")
   use("nvim-treesitter/nvim-treesitter", { run = ":TSUpdate" })
 
   -- Telescope
   use("nvim-lua/telescope.nvim")
-  use {"nvim-telescope/telescope-fzf-native.nvim", run = "makes"}
-  use {"nvim-telescope/telescope-file-browser.nvim"}
+  use({"nvim-telescope/telescope-fzf-native.nvim", run = "makes"})
+  use({"nvim-telescope/telescope-file-browser.nvim"})
 
   -- Utilities
   use("APZelos/blamer.nvim")
@@ -27,7 +29,7 @@ require("packer").startup(function()
   use("windwp/nvim-autopairs")
 
   -- GIT
-  use("TimUntersberger/neogit")
+  -- use("TimUntersberger/neogit")
   use("tpope/vim-fugitive")
   use("sindrets/diffview.nvim") -- required for neogit
   use("lewis6991/gitsigns.nvim")
