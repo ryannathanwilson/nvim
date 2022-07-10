@@ -1,3 +1,4 @@
+local M = {}
 local actions = require('telescope.actions')
 
 require('telescope').setup({
@@ -22,16 +23,14 @@ require('telescope').setup({
     },
   },
 })
-local mappings = {}
-
 
 -- Find files
-mappings.files = function()
+M.files = function()
   require('telescope.builtin').find_files()
 end
 
 -- Find words
-mappings.words = function()
+M.words = function()
   require('telescope.builtin').live_grep()
 end
 
@@ -40,4 +39,4 @@ require('telescope').load_extension('file_browser')
 -- TODO: add more extensions?
 
 
-return mappings
+return M

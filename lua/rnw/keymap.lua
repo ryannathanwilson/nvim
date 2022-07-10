@@ -1,7 +1,28 @@
-local map = require("rnw.utils").map
+local map = vim.keymap.set
+local plugin_options = require'rnw.plugin_options'
 
 -- Leader
-vim.g.mapleader = ","
+vim.g.mapleader = " "
+
+-- GIT
+local gitsigns = plugin_options.gitsigns
+map('n', '<leader>gs', '<cmd>DiffviewOpen<CR>')
+map('n', '<leader>hn', gitsigns.next_hunk, {expr=true})
+map('n', '<leader>hp', gitsigns.prev_hunk, {expr=true})
+
+map({'n', 'v'}, '<leader>hs', gitsigns.loaded.stage_hunk)
+map({'n', 'v'}, '<leader>hr',gitsigns.loaded.reset_hunk)
+map('n', '<leader>hu', gitsigns.loaded.undo_stage_hunk)
+
+map('n', '<leader>hS', gitsigns.loaded.stage_buffer)
+map('n', '<leader>hR', gitsigns.loaded.reset_buffer)
+map('n', '<leader>hp', gitsigns.loaded.preview_hunk)
+map('n', '<leader>hb', function() gitsigns.loaded.blame_line{full=true} end)
+map('n', '<leader>tb', gitsigns.loaded.toggle_current_line_blame)
+map('n', '<leader>hd', gitsigns.loaded.diffthis)
+map('n', '<leader>hD', function() gitsigns.loaded.diffthis('~') end)
+map('n', '<leader>td', gitsigns.loaded.toggle_deleted)
+
 
 -- Search
 map('n', '<c-/>', "<cmd>Telescope current_buffer_fuzzy_find<CR>")
@@ -9,8 +30,8 @@ map('n', '<c-f>', '<cmd>lua require("rnw.telescope").files()<CR>')
 map('n', '<leader>g', '<cmd>lua require("rnw.telescope").words()<CR>')
 
 -- Indenting
-map('v', '<', '<gv') 
-map('v', '>', '>gv') 
+map('v', '<', '<gv')
+map('v', '>', '>gv')
 
 -- Esc
 map('i', 'jk', '<Esc>')
