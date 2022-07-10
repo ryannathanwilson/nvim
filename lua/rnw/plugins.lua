@@ -29,8 +29,8 @@ require("packer").startup(function()
   use("windwp/nvim-autopairs")
 
   -- GIT
-  -- use("TimUntersberger/neogit")
-  use("tpope/vim-fugitive")
+  use("TimUntersberger/neogit")
+  -- use("tpope/vim-fugitive")
   use("sindrets/diffview.nvim") -- required for neogit
   use("lewis6991/gitsigns.nvim")
 

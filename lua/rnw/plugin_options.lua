@@ -1,4 +1,5 @@
-local M = {}
+local M = {} -- Export functions for keymaps
+
 -- ================================== --
 -- Plugins with their own config file --
 -- ================================== --
@@ -8,6 +9,12 @@ require("rnw.lang")
 -- ================================== --
 -- GIT --
 -- ================================== --
+require('neogit').setup({
+  kind = 'vsplit',
+  integrations = {
+      diffview = true
+    },
+})
 require('gitsigns').setup()
 local gs = package.loaded.gitsigns
 M.gitsigns = {
