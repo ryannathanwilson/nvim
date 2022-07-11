@@ -8,7 +8,7 @@ require('nvim-treesitter.configs').setup({
   incremental_selection = {
     enable = false,
   },
-  ensure_installed = {'javascript', 'typescript'}
+  ensure_installed = {'javascript', 'typescript', 'java'}
 })
 
 -- CMP - Code Completion

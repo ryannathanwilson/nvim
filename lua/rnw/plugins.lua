@@ -12,10 +12,17 @@ require("packer").startup(function()
 
   -- Language
   use("neovim/nvim-lspconfig")
+  use("williamboman/nvim-lsp-installer")
   use("hrsh7th/nvim-cmp")
   use("hrsh7th/vim-vsnip")
   use("hrsh7th/cmp-nvim-lsp")
   use("nvim-treesitter/nvim-treesitter", { run = ":TSUpdate" })
+  use({"mfussenegger/nvim-jdtls",
+    config = function()
+    require("plugin.jdtls.config").atach()
+    end,
+    module = "jdtls",
+  })
 
   -- Telescope
   use("nvim-lua/telescope.nvim")
