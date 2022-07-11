@@ -30,6 +30,8 @@ map('n', '<leader>bd', '<cmd>bd<CR>')
 
 -- GIT
 local gitsigns = plugin_options.gitsigns
+local neogit = require'neogit'
+map('n', '<leader>gs', function() neogit.open() end)
 map('n', '<leader>dv', '<cmd>DiffviewOpen<CR>')
 map('n', '<leader>hn', gitsigns.next_hunk, { expr = true })
 map('n', '<leader>hp', gitsigns.prev_hunk, { expr = true })
