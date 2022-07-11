@@ -26,13 +26,14 @@ map('n', '<C-H>', '<C-W><C-H>')
 map('n', '<leader>n', '<cmd>bn<CR>')
 
 -- Delete current buffer
-map('n', '<leader>bd', '<cmd>bd<CR>')
+map('n', '<leader>bd', function() vim.cmd [[bd]] end)
 
 -- GIT
 local gitsigns = plugin_options.gitsigns
-local neogit = require'neogit'
+local neogit = require 'neogit'
+
 map('n', '<leader>gs', function() neogit.open() end)
-map('n', '<leader>dv', '<cmd>DiffviewOpen<CR>')
+map('n', '<leader>dv', function() vim.cmd [[DiffviewOpen]] end)
 map('n', '<leader>hn', gitsigns.next_hunk, { expr = true })
 map('n', '<leader>hp', gitsigns.prev_hunk, { expr = true })
 
@@ -50,10 +51,10 @@ map('n', '<leader>hD', function() gitsigns.loaded.diffthis('~') end)
 map('n', '<leader>td', gitsigns.loaded.toggle_deleted)
 
 -- Search
-map('n', '<c-/>', function() vim.cmd[[Telescope current_buffer_fuzzy_find]] end)
-map('n', '<leader>ff', function() vim.cmd[[Telescope git_files]] end)
-map('n', '<leader>f', function() vim.cmd[[Telescope find_files]] end)
-map('n', '<leader>g', function() vim.cmd[[Telescope live_grep]] end)
+map('n', '<c-/>', function() vim.cmd [[Telescope current_buffer_fuzzy_find]] end)
+map('n', '<leader>ff', function() vim.cmd [[Telescope git_files]] end)
+map('n', '<leader>f', function() vim.cmd [[Telescope find_files]] end)
+map('n', '<leader>g', function() vim.cmd [[Telescope live_grep]] end)
 
 -- Comment toggle
 map('n', '++', '<cmd>CommentToggle<CR>')
