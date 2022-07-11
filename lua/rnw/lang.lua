@@ -8,7 +8,7 @@ require('nvim-treesitter.configs').setup({
   incremental_selection = {
     enable = false,
   },
-  ensure_installed = {'javascript', 'typescript', 'java'}
+  ensure_installed = {'javascript', 'typescript', 'java', 'lua'}
 })
 
 -- CMP - Code Completion
@@ -63,7 +63,7 @@ cmp.setup({
     { name = 'nvim_lsp' },
     { name = 'vsnip' }, -- For vsnip users.
   }, {
-    { name = 'buffer' },
+    { name = 'buffer', keyword_length = 4 },
   })
 })
 
@@ -94,7 +94,7 @@ local custom_attach = function(_, bufnr)
   vim.keymap.set('n', 'K', vim.lsp.buf.hover, bufopts)
   vim.keymap.set('n', 'gd', vim.lsp.buf.definition, bufopts)
   vim.keymap.set('n', 'gr', vim.lsp.buf.references, bufopts)
-  vim.keymap.set('n', '<leader>f', vim.lsp.buf.formatting, bufopts)
+  vim.keymap.set('n', '<C-F>', vim.lsp.buf.formatting, bufopts)
   vim.keymap.set('n', 'grr', vim.lsp.buf.rename, bufopts)
   vim.keymap.set('n', 'gy', vim.lsp.buf.type_definition, bufopts)
   vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, bufopts)
