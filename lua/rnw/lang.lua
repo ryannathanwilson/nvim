@@ -8,7 +8,7 @@ require('nvim-treesitter.configs').setup({
   incremental_selection = {
     enable = false,
   },
-  ensure_installed = {'javascript', 'typescript', 'java', 'lua'}
+  ensure_installed = { 'javascript', 'typescript', 'java', 'lua' }
 })
 
 -- CMP - Code Completion
@@ -20,7 +20,7 @@ end
 local feedkey = function(key, mode)
   vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes(key, true, true, true), mode, true)
 end
-local cmp = require'cmp'
+local cmp = require 'cmp'
 
 
 cmp.setup({
@@ -90,10 +90,10 @@ cmp.setup.cmdline(':', {
 -- end
 
 local custom_attach = function(_, bufnr)
-  local bufopts = { noremap=true, silent=true, buffer=bufnr }
+  local bufopts = { noremap = true, silent = true, buffer = bufnr }
   vim.keymap.set('n', 'K', vim.lsp.buf.hover, bufopts)
   vim.keymap.set('n', 'gd', vim.lsp.buf.definition, bufopts)
-  vim.keymap.set('n', 'gr', vim.lsp.buf.references, bufopts)
+  -- vim.keymap.set('n', 'gr', vim.lsp.buf.references, bufopts)
   vim.keymap.set('n', '<C-F>', vim.lsp.buf.formatting, bufopts)
   vim.keymap.set('n', 'grr', vim.lsp.buf.rename, bufopts)
   vim.keymap.set('n', 'gy', vim.lsp.buf.type_definition, bufopts)
@@ -105,23 +105,26 @@ end
 
 local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
 
-lspconfig.tsserver.setup{
+lspconfig.cssls.setup {
   on_attach = custom_attach,
   capabilities = capabilities,
 }
 
-lspconfig.sumneko_lua.setup{
+lspconfig.tsserver.setup {
+  on_attach = custom_attach,
+  filetypes = { "typescript", "typescriptreact", "typescript.tsx", "javascript", "javascriptreact", "javascript.jsx" },
+  capabilities = capabilities,
+}
+
+lspconfig.sumneko_lua.setup {
   on_attach = custom_attach,
   capabilities = capabilities,
-  cmd = {'lua-language-server'},
+  cmd = { 'lua-language-server' },
   settings = {
     Lua = {
       diagnostics = {
-        globals = {'vim', 'use'}
+        globals = { 'vim', 'use' }
       }
     }
   }
 }
-
-
-

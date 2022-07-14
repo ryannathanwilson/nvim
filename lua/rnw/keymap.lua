@@ -55,6 +55,7 @@ map('n', '<c-/>', function() vim.cmd [[Telescope current_buffer_fuzzy_find]] end
 map('n', '<leader>ff', function() vim.cmd [[Telescope git_files]] end)
 map('n', '<leader>f', function() vim.cmd [[Telescope find_files]] end)
 map('n', '<leader>g', function() vim.cmd [[Telescope live_grep]] end)
+map('n', 'gr', function() vim.cmd [[Telescope lsp_references]] end)
 
 -- Comment toggle
 map('n', '++', '<cmd>CommentToggle<CR>')
