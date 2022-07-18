@@ -37,6 +37,7 @@ require("packer").startup(function()
   use("terrortylor/nvim-comment")
   use("nvim-lualine/lualine.nvim")
   use("windwp/nvim-autopairs")
+  use("kyazdani42/nvim-tree.lua")
 
   -- GIT
   use("TimUntersberger/neogit")
