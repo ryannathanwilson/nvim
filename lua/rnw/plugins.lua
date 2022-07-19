@@ -6,7 +6,7 @@ require("packer").startup(function()
   -- Colorscheme
   use("gruvbox-community/gruvbox")
   use("folke/tokyonight.nvim")
-  use("mhinz/vim-startify")
+  -- use("mhinz/vim-startify")
   use("sainnhe/everforest")
   use("tomasr/molokai")
 

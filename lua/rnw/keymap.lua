@@ -28,6 +28,12 @@ map('n', '<leader>n', '<cmd>bn<CR>')
 -- Delete current buffer
 map('n', '<leader>bd', function() vim.cmd [[bd]] end)
 
+-- Print path of current buffer
+map('n', '<leader>pwd', function() vim.cmd [[echo expand("#1:p")]] end)
+
+-- NVIM-Tree
+map('n', '<C-G>', function() vim.cmd [[NvimTreeFindFileToggle]] end)
+
 -- GIT
 local gitsigns = plugin_options.gitsigns
 local neogit = require 'neogit'
