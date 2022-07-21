@@ -3,6 +3,7 @@ local actions = require'telescope.actions'
 
 require('telescope').setup({
   defaults = {
+    path_display = { "truncate" },
     layout_config = {
       width = 0.8,
       prompt_position = "top",
@@ -17,22 +18,8 @@ require('telescope').setup({
       }
     }
   },
-  extensions = {
-    file_browser = {
-      hijack_netrw = true,
-    },
-  },
 })
 
--- Find files
-M.files = function()
-  require('telescope.builtin').find_files()
-end
-
--- Find words
-M.words = function()
-  require('telescope.builtin').live_grep()
-end
 
 require('telescope').load_extension('fzf')
 require('telescope').load_extension('file_browser')
