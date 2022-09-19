@@ -29,6 +29,32 @@ M.gitsigns = {
   end,
 }
 
+require('diffview').setup({
+  hooks = {
+    view_opened = function(view)
+      local DiffView = require("diffview.views.diff.diff_view").DiffView
+      if view:instanceof(DiffView) then
+        -- Refresh diffview when the git index changes:
+        local watcher = vim.loop.new_fs_poll()
+        watcher:start(view.git_dir .. "/index", 1000, function(err, prev, cur)
+          if not err then
+            vim.schedule(function()
+              vim.cmd("DiffviewRefresh")
+            end)
+          end
+        end)
+
+        -- Stop the watcher when the view closes:
+        DiffviewGlobal.emitter:on("view_closed", function(v)
+          if v == view then
+            watcher:stop()
+          end
+        end)
+      end
+    end,
+  },
+})
+
 -- ================================== --
 -- NVIM Comment --
 -- ================================== --
@@ -71,6 +97,9 @@ require("nvim-tree").setup({
   open_on_setup = true,
   renderer = {
     group_empty = true,
+    icons = {
+      git_placement = "after",
+    },
   },
   filters = {
     dotfiles = false,

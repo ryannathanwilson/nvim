@@ -20,12 +20,7 @@ require("packer").startup(function()
   use("hrsh7th/vim-vsnip")
   use("hrsh7th/cmp-nvim-lsp")
   use("nvim-treesitter/nvim-treesitter", { run = ":TSUpdate" })
-  use({"mfussenegger/nvim-jdtls",
-    config = function()
-    require("plugin.jdtls.config").atach()
-    end,
-    module = "jdtls",
-  })
+  use("mfussenegger/nvim-jdtls")
 
   -- Telescope
   use("nvim-lua/telescope.nvim")
@@ -33,7 +28,6 @@ require("packer").startup(function()
   use({"nvim-telescope/telescope-file-browser.nvim"})
 
   -- Utilities
-  use("APZelos/blamer.nvim")
   use("terrortylor/nvim-comment")
   use("nvim-lualine/lualine.nvim")
   use("windwp/nvim-autopairs")
@@ -44,6 +38,7 @@ require("packer").startup(function()
   -- use("tpope/vim-fugitive")
   use("sindrets/diffview.nvim") -- required for neogit
   use("lewis6991/gitsigns.nvim")
+  use("APZelos/blamer.nvim")
 
 
   -- Supporting

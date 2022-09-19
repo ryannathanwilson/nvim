@@ -89,6 +89,7 @@ cmp.setup.cmdline(':', {
 -- local on_attach = function(client, bufnr)
 -- end
 
+
 local custom_attach = function(_, bufnr)
   local bufopts = { noremap = true, silent = true, buffer = bufnr }
   vim.keymap.set('n', 'K', vim.lsp.buf.hover, bufopts)
@@ -101,6 +102,7 @@ local custom_attach = function(_, bufnr)
   vim.keymap.set('n', 'dp', vim.diagnostic.goto_prev, bufopts)
   vim.keymap.set('n', 'dn', vim.diagnostic.goto_next, bufopts)
   vim.keymap.set('n', 'do', vim.diagnostic.open_float, bufopts)
+
 end
 
 local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
@@ -110,9 +112,33 @@ lspconfig.cssls.setup {
   capabilities = capabilities,
 }
 
+lspconfig.eslint.setup({
+  capabilities = capabilities,
+  flags = { debounce_text_changes = 500 },
+  on_attach = function(client, _)
+    client.server_capabilities.documentFormattingProvider = true
+    if client.server_capabilities.documentFormattingProvider then
+      local au_lsp = vim.api.nvim_create_augroup("eslint_lsp", { clear = true })
+      vim.api.nvim_create_autocmd("BufWritePre", {
+        pattern = "*",
+        callback = function()
+          vim.lsp.buf.formatting()
+        end,
+        group = au_lsp,
+      })
+    end
+  end,
+})
+
 lspconfig.tsserver.setup {
   on_attach = custom_attach,
   filetypes = { "typescript", "typescriptreact", "typescript.tsx", "javascript", "javascriptreact", "javascript.jsx" },
+  capabilities = capabilities,
+}
+
+lspconfig.java_language_server.setup {
+  on_attach = custom_attach,
+  filetypes = { "java" },
   capabilities = capabilities,
 }
 
