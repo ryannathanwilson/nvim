@@ -142,6 +142,11 @@ lspconfig.java_language_server.setup {
   capabilities = capabilities,
 }
 
+lspconfig.gopls.setup {
+  on_attach = custom_attach,
+  capabilities = capabilities,
+}
+
 lspconfig.sumneko_lua.setup {
   on_attach = custom_attach,
   capabilities = capabilities,
