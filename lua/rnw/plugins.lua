@@ -35,9 +35,9 @@ require("packer").startup(function()
 
   -- GIT
   use("TimUntersberger/neogit")
-  -- use("tpope/vim-fugitive")
-  use("sindrets/diffview.nvim") -- required for neogit
-  use("lewis6991/gitsigns.nvim")
+  use("tpope/vim-fugitive")
+  -- use("sindrets/diffview.nvim") -- required for neogit
+  -- use("lewis6991/gitsigns.nvim")
   use("APZelos/blamer.nvim")
 
 
