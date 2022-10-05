@@ -33,12 +33,22 @@ vim.cmd [[highlight WinSeparator guibg=NONE]]
 
 
 -- EVERFOREST
--- vim.cmd [[colorscheme everforest]]
+vim.cmd [[colorscheme everforest]]
+
+-- ROSE PINE
+-- vim.cmd [[colorscheme rose-pine]]
 
 -- TOKYO NIGHT
 -- vim.g.tokyonight_style = "night"
 -- vim.cmd [[colorscheme tokyonight]]
 
 -- GRUVBOX
-vim.cmd [[let g:gruvbox_sign_column = 'bg0']]
-vim.cmd [[colorscheme gruvbox]]
+-- vim.cmd [[let g:gruvbox_sign_column = 'bg0']]
+-- vim.cmd [[colorscheme gruvbox]]
+--
+--
+
+-- ===================================
+-- BLAMER
+-- ===================================
+vim.cmd [[BlamerShow]]

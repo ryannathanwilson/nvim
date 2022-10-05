@@ -36,7 +36,7 @@ map('n', '<C-G>', function() vim.cmd [[NvimTreeFindFileToggle]] end)
 
 -- GIT
 
-map('n', '<leader>gs', function() vim.cmd [[Git]] end)
+map('n', '<leader>gs', function() vim.cmd [[tab Git]] end)
 
 -- local gitsigns = plugin_options.gitsigns
 -- local neogit = require 'neogit'

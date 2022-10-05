@@ -5,6 +5,7 @@ require("packer").startup(function()
 
   -- Colorscheme
   use("gruvbox-community/gruvbox")
+  use({'rose-pine/neovim', as = 'rose-pine'})
   use("folke/tokyonight.nvim")
   -- use("mhinz/vim-startify")
   use("sainnhe/everforest")
@@ -34,7 +35,7 @@ require("packer").startup(function()
   use("kyazdani42/nvim-tree.lua")
 
   -- GIT
-  use("TimUntersberger/neogit")
+  -- use("TimUntersberger/neogit")
   use("tpope/vim-fugitive")
   -- use("sindrets/diffview.nvim") -- required for neogit
   -- use("lewis6991/gitsigns.nvim")
