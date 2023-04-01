@@ -45,10 +45,8 @@ vim.cmd [[colorscheme everforest]]
 -- GRUVBOX
 -- vim.cmd [[let g:gruvbox_sign_column = 'bg0']]
 -- vim.cmd [[colorscheme gruvbox]]
---
---
+vim.cmd [[let g:gruvbox_sign_column = 'bg0']]
+vim.cmd [[colorscheme gruvbox]]
 
--- ===================================
 -- BLAMER
--- ===================================
-vim.cmd [[BlamerShow]]
+vim.cmd [[let g:blamer_enabled = 1]]

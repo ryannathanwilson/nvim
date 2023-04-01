@@ -21,7 +21,6 @@ require("packer").startup(function()
   use("hrsh7th/vim-vsnip")
   use("hrsh7th/cmp-nvim-lsp")
   use("nvim-treesitter/nvim-treesitter", { run = ":TSUpdate" })
-  use("mfussenegger/nvim-jdtls")
 
   -- Telescope
   use("nvim-lua/telescope.nvim")
@@ -35,16 +34,22 @@ require("packer").startup(function()
   use("kyazdani42/nvim-tree.lua")
 
   -- GIT
-  -- use("TimUntersberger/neogit")
   use("tpope/vim-fugitive")
   -- use("sindrets/diffview.nvim") -- required for neogit
   -- use("lewis6991/gitsigns.nvim")
   use("APZelos/blamer.nvim")
 
+  -- Start Screen
+  use({"goolord/alpha-nvim",
+    requires = { 'nvim-tree/nvim-web-devicons' },
+    config = function()
+      require("alpha").setup(require'alpha.themes.dashboard'.config)
+    end,
+  })
 
   -- Supporting
   use("nvim-lua/plenary.nvim") -- required for telescope and neogit
   use("nvim-lua/popup.nvim") -- required for telescope
 end)
 
-require('rnw.plugin_options')
+require'rnw.plugin_config'

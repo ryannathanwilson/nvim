@@ -1,5 +1,5 @@
 local map = vim.keymap.set
-local plugin_options = require 'rnw.plugin_options'
+-- local plugin_options = require 'rnw.plugin_options'
 
 -- Leader
 vim.g.mapleader = " "
@@ -20,50 +20,31 @@ map('n', '<C-L>', '<C-W><C-L>')
 map('n', '<C-H>', '<C-W><C-H>')
 
 -- Previous file toggle
--- map('n', '<leader>l', '<c-^><CR>')
+map('n', '<leader>l', '<C-t><CR>')
+map('n', '^', '<C-o><CR>')
 
 -- Next buffer
-map('n', '<leader>n', '<cmd>bn<CR>')
+map('n', '<leader>bn', '<cmd>bn<CR>')
 
 -- Delete current buffer
-map('n', '<leader>bd', function() vim.cmd [[bd]] end)
+map('n', '<leader>c', function() vim.cmd [[bd]] end)
 
 -- Print path of current buffer
 map('n', '<leader>pwd', function() vim.cmd [[echo expand("#1:p")]] end)
 
 -- NVIM-Tree
-map('n', '<C-G>', function() vim.cmd [[NvimTreeFindFileToggle]] end)
+map('n', '<leader>e', function() vim.cmd [[NvimTreeFindFileToggle]] end)
 
 -- GIT
 
 map('n', '<leader>gs', function() vim.cmd [[tab Git]] end)
 
--- local gitsigns = plugin_options.gitsigns
--- local neogit = require 'neogit'
-
--- map('n', '<leader>gs', function() neogit.open() end)
--- map('n', '<leader>dv', function() vim.cmd [[DiffviewOpen]] end)
--- map('n', '<leader>hn', gitsigns.next_hunk, { expr = true })
--- map('n', '<leader>hp', gitsigns.prev_hunk, { expr = true })
-
--- map({ 'n', 'v' }, '<leader>hs', gitsigns.loaded.stage_hunk)
--- map({ 'n', 'v' }, '<leader>hr', gitsigns.loaded.reset_hunk)
--- map('n', '<leader>hu', gitsigns.loaded.undo_stage_hunk)
---
--- map('n', '<leader>hS', gitsigns.loaded.stage_buffer)
--- map('n', '<leader>hR', gitsigns.loaded.reset_buffer)
--- map('n', '<leader>hp', gitsigns.loaded.preview_hunk)
--- map('n', '<leader>hb', function() gitsigns.loaded.blame_line { full = true } end)
--- map('n', '<leader>tb', gitsigns.loaded.toggle_current_line_blame)
--- map('n', '<leader>hd', gitsigns.loaded.diffthis)
--- map('n', '<leader>hD', function() gitsigns.loaded.diffthis('~') end)
--- map('n', '<leader>td', gitsigns.loaded.toggle_deleted)
-
 -- Search
-map('n', '<c-/>', function() vim.cmd [[Telescope current_buffer_fuzzy_find]] end)
-map('n', '<leader>ff', function() vim.cmd [[Telescope git_files]] end)
-map('n', '<leader>f', function() vim.cmd [[Telescope find_files]] end)
-map('n', '<leader>g', function() vim.cmd [[Telescope live_grep]] end)
+map('n', '<leader>s/', function() vim.cmd [[Telescope current_buffer_fuzzy_find]] end)
+map('n', '<leader>sf', '<cmd> lua require("rnw.plugin_config.telescope").find_project_files()<CR>')
+-- map('n', '<leader>f', function() vim.cmd [[Telescope find_files]] end)
+map('n', '<leader>st', function() vim.cmd [[Telescope live_grep]] end)
+map('n', '<leader>sb', function() vim.cmd [[Telescope buffers]] end)
 map('n', 'gr', function() vim.cmd [[Telescope lsp_references]] end)
 
 -- Comment toggle

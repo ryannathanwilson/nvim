@@ -1,4 +1,4 @@
-require'rnw.set'
+require'rnw.config'
 require'rnw.plugins'
 require'rnw.keymap'
 -- TODO: configure git
