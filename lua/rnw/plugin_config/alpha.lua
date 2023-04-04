@@ -17,7 +17,7 @@ dashboard.section.buttons.val = {
     dashboard.button( "f", "  > Find file", "<cmd> lua require('rnw.plugin_config.telescope').find_project_files()<CR>"),
     dashboard.button( "t", "  > Search text"   , ":Telescope live_grep<CR>"),
     dashboard.button( "c", "  > Configuration" , ":e $MYVIMRC | :cd %:p:h | split . | wincmd k | pwd<CR>"),
-    dashboard.button( "q", "  > Quit NVIM", ":qa<CR>"),
+    dashboard.button( "q", "  > Quit NeoVim", ":qa<CR>"),
 }
 
 
