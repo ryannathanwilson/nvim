@@ -5,7 +5,7 @@ require("packer").startup(function()
 
   -- Colorscheme
   use("gruvbox-community/gruvbox")
-  use({'rose-pine/neovim', as = 'rose-pine'})
+  use({ 'rose-pine/neovim', as = 'rose-pine' })
   use("folke/tokyonight.nvim")
   -- use("mhinz/vim-startify")
   use("sainnhe/everforest")
@@ -21,11 +21,13 @@ require("packer").startup(function()
   use("hrsh7th/vim-vsnip")
   use("hrsh7th/cmp-nvim-lsp")
   use("nvim-treesitter/nvim-treesitter", { run = ":TSUpdate" })
+  use('jose-elias-alvarez/null-ls.nvim')
+  use("MunifTanjim/prettier.nvim")
 
   -- Telescope
   use("nvim-lua/telescope.nvim")
-  use({"nvim-telescope/telescope-fzf-native.nvim", run = "makes"})
-  use({"nvim-telescope/telescope-file-browser.nvim"})
+  use({ "nvim-telescope/telescope-fzf-native.nvim", run = "makes" })
+  use({ "nvim-telescope/telescope-file-browser.nvim" })
 
   -- Utilities
   use("terrortylor/nvim-comment")
@@ -40,16 +42,17 @@ require("packer").startup(function()
   use("APZelos/blamer.nvim")
 
   -- Start Screen
-  use({"goolord/alpha-nvim",
+  use({
+    "goolord/alpha-nvim",
     requires = { 'nvim-tree/nvim-web-devicons' },
     config = function()
-      require("alpha").setup(require'alpha.themes.dashboard'.config)
+      require("alpha").setup(require 'alpha.themes.dashboard'.config)
     end,
   })
 
   -- Supporting
   use("nvim-lua/plenary.nvim") -- required for telescope and neogit
-  use("nvim-lua/popup.nvim") -- required for telescope
+  use("nvim-lua/popup.nvim")   -- required for telescope
 end)
 
-require'rnw.plugin_config'
+require 'rnw.plugin_config'

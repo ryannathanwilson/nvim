@@ -1,9 +1,11 @@
-require'rnw.plugin_config.alpha'
-require'rnw.plugin_config.cmp'
-require'rnw.plugin_config.git'
-require'rnw.plugin_config.lsp'
-require'rnw.plugin_config.lualine'
-require'rnw.plugin_config.nvim-tree'
-require'rnw.plugin_config.telescope'
-require'nvim_comment'.setup()
-require'nvim-autopairs'.setup()
+require 'rnw.plugin_config.alpha'
+require 'rnw.plugin_config.cmp'
+require 'rnw.plugin_config.git'
+require 'rnw.plugin_config.lsp'
+require 'rnw.plugin_config.lualine'
+require 'rnw.plugin_config.nvim-tree'
+require 'rnw.plugin_config.telescope'
+require 'rnw.plugin_config.prettier'
+require 'rnw.plugin_config.null-ls'
+require 'nvim_comment'.setup()
+require 'nvim-autopairs'.setup()

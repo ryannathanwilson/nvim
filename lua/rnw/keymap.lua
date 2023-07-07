@@ -27,25 +27,25 @@ map('n', '^', '<C-o><CR>')
 map('n', '<leader>bn', '<cmd>bn<CR>')
 
 -- Delete current buffer
-map('n', '<leader>c', function() vim.cmd [[bd]] end)
+map('n', '<leader>c', '<cmd>bd<CR>')
 
 -- Print path of current buffer
-map('n', '<leader>pwd', function() vim.cmd [[echo expand("#1:p")]] end)
+map('n', '<leader>pwd', '<cmd>echo expand("#1:p")<CR>')
 
 -- NVIM-Tree
-map('n', '<leader>e', function() vim.cmd [[NvimTreeFindFileToggle]] end)
+map('n', '<leader>e', '<cmd>NvimTreeFindFileToggle<CR>')
 
 -- GIT
 
-map('n', '<leader>gs', function() vim.cmd [[tab Git]] end)
+map('n', '<leader>gs', '<cmd>tab Git<CR>')
 
 -- Search
-map('n', '<leader>s/', function() vim.cmd [[Telescope current_buffer_fuzzy_find]] end)
+map('n', '<leader>s/', '<cmd>Telescope current_buffer_fuzzy_find<CR>')
 map('n', '<leader>sf', '<cmd> lua require("rnw.plugin_config.telescope").find_project_files()<CR>')
 -- map('n', '<leader>f', function() vim.cmd [[Telescope find_files]] end)
-map('n', '<leader>st', function() vim.cmd [[Telescope live_grep]] end)
-map('n', '<leader>sb', function() vim.cmd [[Telescope buffers]] end)
-map('n', 'gr', function() vim.cmd [[Telescope lsp_references]] end)
+map('n', '<leader>st', '<cmd>Telescope live_grep<CR>')
+map('n', '<leader>sb', '<cmd>Telescope buffers<CR>')
+map('n', 'gr', '<cmd>Telescope lsp_references<CR>')
 
 -- Comment toggle
 map('n', '++', '<cmd>CommentToggle<CR>')
