@@ -139,3 +139,5 @@ lspconfig.rust_analyzer.setup {
     }
   }
 }
+
+lspconfig.svelte.setup{}
