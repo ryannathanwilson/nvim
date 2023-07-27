@@ -34,6 +34,13 @@ require("packer").startup(function()
   use("nvim-lualine/lualine.nvim")
   use("windwp/nvim-autopairs")
   use("kyazdani42/nvim-tree.lua")
+  use({
+    "kdheepak/lazygit.nvim",
+    -- optional for floating window border decoration
+    requires = {
+      "nvim-lua/plenary.nvim",
+    },
+  })
 
   -- GIT
   use("tpope/vim-fugitive")
