@@ -9,3 +9,4 @@ require 'rnw.plugin_config.prettier'
 require 'rnw.plugin_config.null-ls'
 require 'nvim_comment'.setup()
 require 'nvim-autopairs'.setup()
+require 'harpoon'.setup()

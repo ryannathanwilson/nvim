@@ -43,7 +43,7 @@ map('n', '<leader>gs', '<cmd>LazyGit<CR>')
 -- Search
 map('n', '<leader>s/', '<cmd>Telescope current_buffer_fuzzy_find<CR>')
 map('n', '<leader>sf', '<cmd> lua require("rnw.plugin_config.telescope").find_project_files()<CR>')
--- map('n', '<leader>f', function() vim.cmd [[Telescope find_files]] end)
+map('n', '<leader>ff', function() vim.cmd [[Telescope find_files]] end)
 map('n', '<leader>st', '<cmd>Telescope live_grep<CR>')
 map('n', '<leader>sb', '<cmd>Telescope buffers<CR>')
 map('n', 'gr', '<cmd>Telescope lsp_references<CR>')
@@ -51,3 +51,16 @@ map('n', 'gr', '<cmd>Telescope lsp_references<CR>')
 -- Comment toggle
 map('n', '++', '<cmd>CommentToggle<CR>')
 map('v', '++', ':CommentToggle<CR>')
+
+local mark = require("harpoon.mark")
+local ui = require("harpoon.ui")
+--
+map("n", "<leader>ha", mark.add_file)
+map("n", "<leader>ht", ui.toggle_quick_menu)
+
+-- map("n", "<C-h>", function() ui.nav_file(1) end)
+-- map("n", "<C-t>", function() ui.nav_file(2) end)
+-- map("n", "<C-n>", function() ui.nav_file(3) end)
+-- map("n", "<C-s>", function() ui.nav_file(4) end)- Harpoon
+-- map('n', '<leader>ht', '<cmd> lua require("harpoon.ui").toggle_quick_menu<CR>')
+-- map('n', '<leader>ha', '<cmd> lua require("harpoon.ui").add_file<CR>')

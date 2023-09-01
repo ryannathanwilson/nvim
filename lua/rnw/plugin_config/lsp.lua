@@ -95,7 +95,14 @@ lspconfig.eslint.setup({
 
 lspconfig.tsserver.setup {
   on_attach = custom_attach,
-  filetypes = { "typescript", "typescriptreact", "typescript.tsx", "javascript", "javascriptreact", "javascript.jsx" },
+  filetypes = {
+    "typescript",
+    "typescriptreact",
+    "typescript.tsx",
+    "javascript",
+    "javascriptreact",
+    "javascript.jsx",
+  },
   capabilities = capabilities,
 }
 
@@ -140,4 +147,4 @@ lspconfig.rust_analyzer.setup {
   }
 }
 
-lspconfig.svelte.setup{}
+lspconfig.svelte.setup {}

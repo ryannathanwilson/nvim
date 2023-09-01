@@ -34,6 +34,7 @@ require("packer").startup(function()
   use("nvim-lualine/lualine.nvim")
   use("windwp/nvim-autopairs")
   use("kyazdani42/nvim-tree.lua")
+  use("ThePrimeagen/harpoon")
   use({
     "kdheepak/lazygit.nvim",
     -- optional for floating window border decoration
