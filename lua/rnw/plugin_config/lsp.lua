@@ -148,3 +148,26 @@ lspconfig.rust_analyzer.setup {
 }
 
 lspconfig.svelte.setup {}
+
+local configs = require 'lspconfig/configs'
+
+if not configs.cssmodules then
+  configs.cssmodules = {
+    default_config = {
+      cmd = { 'cssmodules-language-server' },
+      filetypes = { 'javascript', 'javascriptreact', 'typescript', 'typescriptreact' },
+      init_options = {
+        camelCase = 'dashes',
+      },
+      root_dir = require('lspconfig.util').root_pattern('package.json')
+    },
+    docs = {
+      description = 'TODO description',
+      default_config = {
+        root_dir = '[[root_pattern("package.json")]]'
+      }
+    }
+  }
+end
+
+configs.cssmodules.setup {}
