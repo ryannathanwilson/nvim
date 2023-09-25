@@ -33,8 +33,39 @@ local lsp_formatting = function(bufnr)
   })
 end
 
-local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
+-- Specify how the border looks like
+local border = 'rounded'
 
+-- Add the border on hover and on signature help popup window
+local handlers = {
+  ['textDocument/hover'] = vim.lsp.with(vim.lsp.handlers.hover, {
+    border = border,
+    title = ' Language Server Protocol ',
+  }),
+  ['textDocument/signatureHelp'] = vim.lsp.with(vim.lsp.handlers.signature_help, {
+    border = border,
+    title = 'Signature help',
+  }),
+}
+
+-- -- Add border to the diagnostic popup window
+vim.diagnostic.config({
+  virtual_text = false,
+  float = {
+    border = border,
+    show_header = false,
+    source = 'always',
+    focus = false,
+    width = 60
+  },
+})
+-- Add the border (handlers) to the lua language server
+lspconfig.lua_ls.setup({
+  handlers = handlers,
+  -- The rest of the server configuration
+})
+
+local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
 local custom_attach = function(client, bufnr)
   local bufopts = { noremap = true, silent = true, buffer = bufnr }
   vim.keymap.set('n', 'K', vim.lsp.buf.hover, bufopts)
@@ -69,31 +100,20 @@ end
 local capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities())
 
 lspconfig.cssls.setup {
+  handlers = handlers,
   on_attach = custom_attach,
   capabilities = capabilities,
 }
 
 lspconfig.eslint.setup({
+  handlers = handlers,
   capabilities = capabilities,
   flags = { debounce_text_changes = 500 },
   on_attach = custom_attach,
-  -- on_attach = function(client, _)
-  --   client.server_capabilities.documentFormattingProvider = true
-  --   if client.server_capabilities.documentFormattingProvider then
-  --     local au_lsp = vim.api.nvim_create_augroup("eslint_lsp", { clear = true })
-  --     vim.api.nvim_create_autocmd("BufWritePre", {
-  --       pattern = "*",
-  --       command = 'EslintFixAll',
-  --       callback = function()
-  --       vim.lsp.buf.format()
-  --       end,
-  --       group = au_lsp,
-  --     })
-  --   end
-  -- end,
 })
 
 lspconfig.tsserver.setup {
+  handlers = handlers,
   on_attach = custom_attach,
   filetypes = {
     "typescript",
@@ -107,11 +127,13 @@ lspconfig.tsserver.setup {
 }
 
 lspconfig.gopls.setup {
+  handlers = handlers,
   on_attach = custom_attach,
   capabilities = capabilities,
 }
 
 lspconfig.lua_ls.setup {
+  handlers = handlers,
   on_attach = custom_attach,
   capabilities = capabilities,
   cmd = { 'lua-language-server' },
@@ -125,6 +147,7 @@ lspconfig.lua_ls.setup {
 }
 
 lspconfig.rust_analyzer.setup {
+  handlers = handlers,
   on_attach = custom_attach,
   capabilities = capabilities,
   settings = {
@@ -147,7 +170,11 @@ lspconfig.rust_analyzer.setup {
   }
 }
 
-lspconfig.svelte.setup {}
+lspconfig.svelte.setup {
+  handlers = handlers,
+  on_attach = custom_attach,
+  capabilities = capabilities,
+}
 
 local configs = require 'lspconfig/configs'
 

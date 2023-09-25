@@ -1,6 +1,6 @@
-require'rnw.config'
-require'rnw.plugins'
-require'rnw.keymap'
+require 'rnw.plugins'
+require 'rnw.config'
+require 'rnw.keymap'
 -- TODO: configure git
 -- TODO: configure statusline
 -- TODO: configure completion

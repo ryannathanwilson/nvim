@@ -37,8 +37,8 @@ map('n', '<leader>e', '<cmd>NvimTreeFindFileToggle<CR>')
 
 -- GIT
 
--- map('n', '<leader>gs', '<cmd>tab Git<CR>')
-map('n', '<leader>gs', '<cmd>LazyGit<CR>')
+map('n', '<leader>gs', '<cmd>tab Git<CR>')
+-- map('n', '<leader>gs', '<cmd>LazyGit<CR>')
 
 -- Search
 map('n', '<leader>s/', '<cmd>Telescope current_buffer_fuzzy_find<CR>')

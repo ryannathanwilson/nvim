@@ -9,7 +9,12 @@ require("packer").startup(function()
   use("folke/tokyonight.nvim")
   -- use("mhinz/vim-startify")
   use("sainnhe/everforest")
+  -- use({
+  --   "neanias/everforest-nvim",
+  --   -- Optional; default configuration will be used if setup isn't called.
+  -- })
   use("tomasr/molokai")
+  use("gmr458/dark_modern.nvim")
 
   -- Icons
   use("kyazdani42/nvim-web-devicons")

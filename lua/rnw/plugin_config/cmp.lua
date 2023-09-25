@@ -1,4 +1,3 @@
-
 -- TODO: compare with LunarVim
 -- CMP - Code Completion
 local has_words_before = function()
@@ -56,23 +55,9 @@ cmp.setup({
   })
 })
 
--- Use buffer source for `/` (if you enabled `native_menu`, this won't work anymore).
 cmp.setup.cmdline('/', {
   mapping = cmp.mapping.preset.cmdline(),
   sources = {
     { name = 'buffer' }
   }
 })
-
--- With this enabled, the tab completion fails for commands
--- Use cmdline & path source for ':' (if you enabled `native_menu`, this won't work anymore).
--- cmp.setup.cmdline(':', {
---   mapping = cmp.mapping.preset.cmdline(),
---   sources = cmp.config.sources(
---     {
---       { name = 'path' }
---     },
---     {
---       { name = 'cmdline' }
---     })
--- })
