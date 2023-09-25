@@ -47,7 +47,12 @@ require("packer").startup(function()
       "nvim-lua/plenary.nvim",
     },
   })
-
+  use({
+    "epwalsh/obsidian.nvim",
+    requires = {
+      "nvim-lua/plenary.nvim",
+    },
+  })
   -- GIT
   use("tpope/vim-fugitive")
   -- use("sindrets/diffview.nvim") -- required for neogit

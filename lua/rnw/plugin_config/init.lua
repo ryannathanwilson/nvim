@@ -7,6 +7,7 @@ require 'rnw.plugin_config.nvim-tree'
 require 'rnw.plugin_config.telescope'
 require 'rnw.plugin_config.prettier'
 require 'rnw.plugin_config.null-ls'
+require 'rnw.plugin_config.obsidian'
 require 'nvim_comment'.setup()
 require 'nvim-autopairs'.setup()
 require 'harpoon'.setup()
