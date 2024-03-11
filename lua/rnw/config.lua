@@ -33,11 +33,11 @@ o.laststatus = 3
 
 
 -- EVERFOREST
-vim.o.termguicolors = true
-vim.cmd [[let g:everforest_background = 'hard']]
-vim.cmd [[let g:everforest_better_performance = 1]]
-vim.cmd [[let g:everforest_ui_contrast = 1]]
-vim.cmd [[colorscheme everforest]]
+-- vim.o.termguicolors = true
+-- vim.cmd [[let g:everforest_background = 'hard']]
+-- vim.cmd [[let g:everforest_better_performance = 1]]
+-- vim.cmd [[let g:everforest_ui_contrast = 1]]
+-- vim.cmd [[colorscheme everforest]]
 
 -- ROSE PINE
 -- vim.cmd [[colorscheme rose-pine]]
@@ -50,8 +50,8 @@ vim.cmd [[colorscheme everforest]]
 -- vim.cmd [[colorscheme tokyonight]]
 
 -- GRUVBOX
--- vim.cmd [[let g:gruvbox_sign_column = 'bg0']]
--- vim.cmd [[colorscheme gruvbox]]
+vim.cmd [[let g:gruvbox_sign_column = 'bg0']]
+vim.cmd [[colorscheme gruvbox]]
 
 -- BLAMER
 vim.cmd [[let g:blamer_enabled = 1]]
