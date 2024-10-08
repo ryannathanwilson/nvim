@@ -13,7 +13,7 @@ require('nvim-treesitter.configs').setup({
 })
 
 
-local lsp_no_auto_format_list = { "tsserver" }
+local lsp_no_auto_format_list = { "tsserver", "ts_ls" }
 
 local found_in_table = function(item_to_check, table)
   for _, value in ipairs(table) do
@@ -113,7 +113,7 @@ lspconfig.eslint.setup({
   on_attach = custom_attach,
 })
 
-lspconfig.tsserver.setup {
+lspconfig.ts_ls.setup {
   handlers = handlers,
   on_attach = custom_attach,
   filetypes = {
