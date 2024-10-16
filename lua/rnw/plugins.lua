@@ -5,16 +5,11 @@ require("packer").startup(function()
 
   -- Colorscheme
   use("gruvbox-community/gruvbox")
-  use({ 'rose-pine/neovim', as = 'rose-pine' })
-  use("folke/tokyonight.nvim")
-  -- use("mhinz/vim-startify")
-  use("sainnhe/everforest")
-  -- use({
-  --   "neanias/everforest-nvim",
-  --   -- Optional; default configuration will be used if setup isn't called.
-  -- })
-  use("tomasr/molokai")
-  use("gmr458/dark_modern.nvim")
+  -- use({ 'rose-pine/neovim', as = 'rose-pine' })
+  -- use("folke/tokyonight.nvim")
+  -- use("sainnhe/everforest")
+  -- use("tomasr/molokai")
+  -- use("gmr458/dark_modern.nvim")
 
   -- Icons
   use("kyazdani42/nvim-web-devicons")
@@ -28,6 +23,8 @@ require("packer").startup(function()
   use("nvim-treesitter/nvim-treesitter", { run = ":TSUpdate" })
   use('jose-elias-alvarez/null-ls.nvim')
   use("MunifTanjim/prettier.nvim")
+  use("williamboman/mason.nvim")
+  use("williamboman/mason-lspconfig.nvim")
 
   -- Telescope
   use("nvim-lua/telescope.nvim")

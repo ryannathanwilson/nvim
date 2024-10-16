@@ -1,19 +1,8 @@
+require('mason').setup();
+require('mason-lspconfig').setup();
 local lspconfig = require("lspconfig")
 
--- Treesitter
-require('nvim-treesitter.configs').setup({
-  highlight = {
-    enable = true,
-    additional_vim_regex_highlighting = { "markdown" },
-  },
-  incremental_selection = {
-    enable = false,
-  },
-  ensure_installed = { 'javascript', 'typescript', 'lua', 'rust', 'markdown' }
-})
-
-
-local lsp_no_auto_format_list = { "tsserver", "ts_ls" }
+local lsp_no_auto_format_list = { "ts_ls" }
 
 local found_in_table = function(item_to_check, table)
   for _, value in ipairs(table) do
